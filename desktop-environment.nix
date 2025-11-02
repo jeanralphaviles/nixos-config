@@ -17,6 +17,7 @@
     rxvt-unicode
     speedcrunch
     touchegg
+    xbindkeys
     xdotool
     xidlehook
     xsel
@@ -29,10 +30,20 @@
 
       displayManager = {
         lightdm.enable = true;
-        sessionCommands = "${pkgs.xorg.xmodmap}/bin/xmodmap ${pkgs.writeText "xkb-layout" ''
-          remove Mod4 = Super_L
-          add Control = Super_L
-        ''}";
+        sessionCommands = "
+
+        ${pkgs.xorg.xmodmap}/bin/xmodmap ${pkgs.writeText "xkb-layout" ''
+                  remove Mod4 = Super_L
+                  add Control = Super_L
+                ''}
+
+        ${pkgs.xbindkeys}/bin/xbindkeys -f ${pkgs.writeText "xbindkeys-config" ''
+                  "xdotool sleep 0.25 key Tab"
+                    Control+Shift + bracketleft
+                  "xdotool sleep 0.25 keyup Shift key Tab keydown Shift"
+                    Control+Shift + bracketright
+                ''}
+        ";
       };
 
       windowManager.i3 = {

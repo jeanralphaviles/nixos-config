@@ -1,14 +1,11 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [ ./hardware-configuration.nix ];
 
   nixpkgs.config.allowUnfree = true;
 
-  # Swap fn key behavior.
+  # Swap fn key behavior on Apple keyboards.
   boot.extraModprobeConfig = "options hid_apple fnmode=2";
 
   environment.systemPackages = with pkgs; [
@@ -50,8 +47,11 @@
 
     libinput = {
       enable = true;
-      touchpad.disableWhileTyping = true;
-      touchpad.naturalScrolling = true;
+
+      touchpad = {
+        disableWhileTyping = true;
+        naturalScrolling = true;
+      };
     };
 
     blueman.enable = true;

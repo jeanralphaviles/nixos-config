@@ -6,22 +6,27 @@ in {
   imports = [ (import "${home-manager}/nixos") ];
 
   home-manager.users.jraviles = { lib, ... }: {
-    programs.home-manager.enable = true;
 
-    programs.git = {
-      enable = true;
-      userEmail = "jeanralph.aviles@gmail.com";
-      userName = "jeanralphaviles";
-      extraConfig = {
-        safe.directory = "/etc/nixos";
+    programs = {
+      home-manager.enable = true;
+
+      git = {
+        enable = true;
+        userEmail = "jeanralph.aviles@gmail.com";
+        userName = "jeanralphaviles";
+        extraConfig = {
+          safe.directory = "/etc/nixos";
+        };
       };
     };
+
     
     home = {
       stateVersion = "25.05";
 
       packages = with pkgs; [
         git
+        htop
         python314
       ];
 

@@ -33,9 +33,13 @@
 
   environment.systemPackages = with pkgs; [
     git
-    nixfmt-rfc-style
     python314
     vim
+
+    # Git Hooks
+    cabal-install
+    ghc
+    pre-commit
   ];
 
   hardware.bluetooth.enable = true;

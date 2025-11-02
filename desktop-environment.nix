@@ -29,11 +29,10 @@
 
       displayManager = {
         lightdm.enable = true;
-        sessionCommands =
-          "${pkgs.xorg.xmodmap}/bin/xmodmap ${pkgs.writeText "xkb-layout" ''
-            remove Mod4 = Super_L
-            add Control = Super_L
-          ''}";
+        sessionCommands = "${pkgs.xorg.xmodmap}/bin/xmodmap ${pkgs.writeText "xkb-layout" ''
+          remove Mod4 = Super_L
+          add Control = Super_L
+        ''}";
       };
 
       windowManager.i3 = {

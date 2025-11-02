@@ -2,15 +2,18 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  ...
+}:
 
 {
-  imports =
-    [
-      ./desktop-environment.nix
-      ./development-environment.nix
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    ./desktop-environment.nix
+    ./development-environment.nix
+    ./hardware-configuration.nix
+  ];
 
   boot.loader.systemd-boot.enable = true;
 
@@ -30,6 +33,7 @@
 
   environment.systemPackages = with pkgs; [
     git
+    nixfmt-rfc-style
     python314
     vim
   ];

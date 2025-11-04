@@ -35,10 +35,10 @@
                 ''}
 
         ${pkgs.xbindkeys}/bin/xbindkeys -f ${pkgs.writeText "xbindkeys-config" ''
-                  "xdotool sleep 0.25 key Tab"
-                    Control+Shift + bracketleft
-                  "xdotool sleep 0.25 keyup Shift key Tab keydown Shift"
-                    Control+Shift + bracketright
+                  "xdotool key --clearmodifiers ctrl+shift+Tab"
+                    Release+Control+Shift + bracketleft
+                  "xdotool key --clearmodifiers ctrl+Tab"
+                    Release+Control+Shift + bracketright
                 ''}
         ";
       };

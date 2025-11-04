@@ -35,10 +35,18 @@
                 ''}
 
         ${pkgs.xbindkeys}/bin/xbindkeys -f ${pkgs.writeText "xbindkeys-config" ''
+                  # Chrome tab switching
                   "xdotool key --clearmodifiers ctrl+shift+Tab"
                     Release+Control+Shift + bracketleft
                   "xdotool key --clearmodifiers ctrl+Tab"
                     Release+Control+Shift + bracketright
+                  # Natural word navigation with Alt.
+                  "xdotool key --clearmodifiers ctrl+BackSpace"
+                    Release+Alt+BackSpace
+                  "xdotool key --clearmodifiers ctrl+Left"
+                    Release+Alt+Left
+                  "xdotool key --clearmodifiers ctrl+Right"
+                    Release+Alt+Right
                 ''}
         ";
       };

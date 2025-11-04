@@ -5,9 +5,6 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  # Swap fn key behavior on Apple keyboards.
-  boot.extraModprobeConfig = "options hid_apple fnmode=2";
-
   environment.systemPackages = with pkgs; [
     alsa-utils
     brightnessctl

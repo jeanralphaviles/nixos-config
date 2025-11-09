@@ -37,9 +37,9 @@
 
         ${pkgs.xbindkeys}/bin/xbindkeys -f ${pkgs.writeText "xbindkeys-config" ''
                   # Chrome tab switching
-                  "xdotool key --clearmodifiers ctrl+shift+Tab"
+                  "xdotool key --clearmodifiers ctrl+Page_Up"
                     Release+Control+Shift + bracketleft
-                  "xdotool key --clearmodifiers ctrl+Tab"
+                  "xdotool key --clearmodifiers ctrl+Page_Down"
                     Release+Control+Shift + bracketright
                   # Natural word navigation with Alt.
                   "xdotool key --clearmodifiers ctrl+BackSpace"

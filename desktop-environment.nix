@@ -7,6 +7,7 @@
 
   environment.systemPackages = with pkgs; [
     alsa-utils
+    autorandr
     brightnessctl
     feh
     google-chrome

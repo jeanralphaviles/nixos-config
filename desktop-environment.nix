@@ -48,6 +48,11 @@
                     Release+Alt+Left
                   "xdotool key --clearmodifiers ctrl+Right"
                     Release+Alt+Right
+                  # Page Up/Down
+                  "xdotool key --clearmodifiers Page_Down"
+                    Release+Alt+Down
+                  "xdotool key --clearmodifiers Page_Up"
+                    Release+Alt+Up
                 ''}
         ";
       };
